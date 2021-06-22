@@ -112,7 +112,7 @@ def main():
       transformations = load_transformations()
       example_image = transformations(image)
       model = load_Model()
-      st.write("The type of residue looks like", predict_image(example_image, model))
+      st.subheader("The type of residue looks like", predict_image(example_image, model))
 
       
   else:
