@@ -99,7 +99,7 @@ def predict_image(img, model):
 
 def main():
   st.title("Garbage detector")
-  st.write("Upload an image to detect the type of residue")
+  st.subheader("Upload an image to detect the type of residue")
   
 
   
@@ -116,7 +116,7 @@ def main():
 
       
   else:
-    st.write("You must enter an image to predict the type of waste")
+    st.subheader("You must enter an image to predict the type of waste")
     
 if __name__ == '__main__':
 	main()
