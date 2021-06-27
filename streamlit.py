@@ -99,10 +99,15 @@ def predict_image(img, model):
 
 def main():
   st.title("Garbage detector")
-  st.subheader("Upload an image to detect the type of residue")
-  
+  img = load_image("logo.png")
+  st.image(img)
 
-  
+  if st.checkbox("More information about the proyect"):
+    st.text("We all like to go to the beach and enjoy it without finding it full of garbage or having\nto dodge all kinds of organic and plastic debris so as not to step on them or come across\nthem while swimming. But the importance of collecting trash from the beach\ngoes far beyond a mere matter of comfort for us humans. There are many more\nthings at stake that depend on how respectful and careful, or just the opposite, that we\nare with the environment.")
+    st.text("The main damages from beach pollution are reflected in the economy, health and\nbiodiversity. Although its consequences are many more.")
+    st.text("The main objective of this project will be the development of a garbage detector\nusing artificial intelligence.")
+    st.text("The purpose of the project will be to detect any type of waste from any type of beach, to\nthen carry out a statistical study based on the information collected and to take the\nnecessary solutions. Either putting up more trash bins or informative posters around the\nbeach for example. In the future, an application will be created to achieve\nthe purpose of the project.")
+  st.subheader("Upload an image to detect the type of residue")
   image_file = st.file_uploader("Upload your Image",type=['png','jpeg','jpg'])
 
   if image_file is not None:
@@ -113,10 +118,11 @@ def main():
       example_image = transformations(image)
       model = load_Model()
       st.write("The image resembles", predict_image(example_image, model))
-
-      
+ 
   else:
     st.subheader("You must upload an image to predict the type of residue")
-    
+  st.write("link repository: https://github.com/devssaturdays/Garbage-detector")
+  st.write("link colab: https://colab.research.google.com/drive/1SnFBkjFJ54WK19aaNG9mgUpOOLt1DjvE?authuser=2#scrollTo=sti2RmVeLlpY")
+  st.write("Our Website: https://saturdays.ai/")         
 if __name__ == '__main__':
 	main()
