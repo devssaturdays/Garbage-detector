@@ -113,7 +113,7 @@ def main():
   if image_file is not None:
     if st.button("Predicting the type of residue"):
       st.image (image_file, caption = 'Uploaded Image.', use_column_width = True)
-      image = Image.open(image_file)
+      image = Image.open(image_file).convert('RGB')
       transformations = load_transformations()
       example_image = transformations(image)
       model = load_Model()
